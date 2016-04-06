@@ -1,10 +1,17 @@
 // Javascript/JQuery for sketchpad
 $(document).ready(function() {
 
-    setPad(16);	
+    setPad(16);
+    var newBtnEnabled = true;	
 
 	$('#newpad').click(function(){
-		newPad();
+		if (newBtnEnabled)
+		{
+			newBtnEnabled = false;
+			newPad();
+		}
+		newBtnEnabled = true;
+		
 	});
 
 	$('#clearpad').click(function(){
