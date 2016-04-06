@@ -1,18 +1,7 @@
 // Javascript/JQuery for sketchpad
 $(document).ready(function() {
 
-    setPad(16);
-    var newBtnEnabled = true;	
-
-	$('#newpad').click(function(){
-		if (newBtnEnabled)
-		{
-			newBtnEnabled = false;
-			newPad();
-		}
-		newBtnEnabled = true;
-		
-	});
+    setPad(16);	
 
 	$('#clearpad').click(function(){
 		$('.pixel').removeClass('red');
@@ -52,7 +41,7 @@ function removePad() {
 
 function newPad() {
 		var pixels = prompt("Please enter the number \
-of pixels per side", "16");
+of pixels per side");
 		if(!($.isNumeric(pixels))) {
 			alert("You need to enter a number!");
 			return;
