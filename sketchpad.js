@@ -6,7 +6,7 @@ $(document).ready(function() {
 	
 
 	$('#newpad').click(function(){
-		pixels = prompt("Please enter the number \
+		var pixels = prompt("Please enter the number \
 of pixels per side", "16");
 		if(!($.isNumeric(pixels))) {
 			alert("You need to enter a number!");
