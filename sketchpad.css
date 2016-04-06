@@ -1,13 +1,14 @@
 /* CSS for sketchpad */
+.spcontainer {
+	width: 960px;
+	height: 960px;
+	border: 1px solid black;
+	margin: 0;
+	padding: 0;
+}
+
 .pixel {
-	/*
-	width: 58px;
-	height: 58px;
-	*/
 	float: left;
-	border-style: solid;
-	border-width: 1px;
-	border-color: black;
 }
 .row {
 	clear: left;
@@ -17,4 +18,12 @@
 
 .red {
 	background-color: red;
+}
+
+.white {
+	background-color: white;
+}
+
+.buttons {
+	display: inline;
 }

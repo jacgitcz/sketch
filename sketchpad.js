@@ -21,12 +21,16 @@ positive integer greater than 1");
 		removePad();
 		setPad(pixels);
 	});
+
+	$('#clearpad').click(function(){
+		$('.pixel').removeClass('red');
+	});
 });
 
 function setPad(numPixels){
 	var totalWidth = 960;
-	var grossWidth = Math.floor(totalWidth / numPixels);
-	var divWidth = grossWidth - 2;
+	var divWidth = Math.floor(totalWidth / numPixels);
+	var actualWidth = divWidth*numPixels;
 
 	var $spc = $('.spcontainer');
 	var rowdiv = "<div class='row'></div>";
@@ -36,12 +40,13 @@ function setPad(numPixels){
 
 	var pixdiv = '<div class="pixel"></div>';
 	for (var k=0; k<numPixels; k++) {
-	 	$('.row').append(pixdiv);
-	 	var $p = $('.pixel');
-	 	$p.css('width',divWidth);
-	 	$p.css('height',divWidth);
-
+	 	$('.row').append(pixdiv);	
 	}
+	var $p = $('.pixel');
+	$p.css('width',divWidth);
+	$p.css('height',divWidth);
+	$('.spcontainer').css('width', actualWidth);
+	$('.spcontainer').css('height', actualWidth);
 
 	$(".pixel").hover(function(){
 		$(this).addClass("red");
