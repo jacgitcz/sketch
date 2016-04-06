@@ -1,0 +1,20 @@
+/* CSS for sketchpad */
+.pixel {
+	/*
+	width: 58px;
+	height: 58px;
+	*/
+	float: left;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+.row {
+	clear: left;
+	width: 961px;
+	float: left;
+}
+
+.red {
+	background-color: red;
+}
