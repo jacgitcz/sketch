@@ -1,29 +1,10 @@
 // Javascript/JQuery for sketchpad
 $(document).ready(function() {
 
-    setPad(16);
-
-	
+    setPad(16);	
 
 	$('#newpad').click(function(){
-		$(this).attr('disabled','true');
-		var pixels = prompt("Please enter the number \
-of pixels per side", "16");
-		if(!($.isNumeric(pixels))) {
-			alert("You need to enter a number!");
-			$(this).removeAttr('disabled');
-			return;
-		}
-		if (pixels <= 1) {
-		alert("The number of pixels per row must be a \
-positive integer greater than 1");
-		$(this).removeAttr('disabled');
-		return;
-	    }
-		
-		removePad();
-		setPad(pixels);
-		$(this).removeAttr('disabled');
+		newPad();
 	});
 
 	$('#clearpad').click(function(){
@@ -60,4 +41,21 @@ function setPad(numPixels){
 
 function removePad() {
 	$('.spcontainer').empty();
-}
+};
+
+function newPad() {
+		var pixels = prompt("Please enter the number \
+of pixels per side", "16");
+		if(!($.isNumeric(pixels))) {
+			alert("You need to enter a number!");
+			return;
+		}
+		if (pixels <= 1) {
+		alert("The number of pixels per row must be a \
+positive integer greater than 1");
+		return;
+	    }
+		
+		removePad();
+		setPad(pixels);
+};
