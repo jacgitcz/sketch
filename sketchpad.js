@@ -6,6 +6,10 @@ $(document).ready(function() {
 	$('#clearpad').click(function(){
 		$('.pixel').removeClass('red');
 	});
+
+	$('#newpad').click(function(){
+		newPad();
+	});
 });
 
 function setPad(numPixels){
@@ -40,8 +44,9 @@ function removePad() {
 };
 
 function newPad() {
+	$('#newpad').off('click');
 		var pixels = prompt("Please enter the number \
-of pixels per side");
+of pixels per side","16");
 		if(!($.isNumeric(pixels))) {
 			alert("You need to enter a number!");
 			return;
@@ -54,4 +59,9 @@ positive integer greater than 1");
 		
 		removePad();
 		setPad(pixels);
+
+		$('#newpad').click(function(){
+		newPad();
+	});
+
 };
